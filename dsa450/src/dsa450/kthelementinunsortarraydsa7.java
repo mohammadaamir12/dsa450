@@ -2,10 +2,12 @@ package dsa450;
 
 import java.util.Scanner;
 
-public class bubblesortdsa6 {
+public class kthelementinunsortarraydsa7 {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
+		System.out.println("Which index value you want?");
+		int k=sc.nextInt();
 		System.out.println("Enter the size of Array");
 		int n=sc.nextInt();
 		int a[]=new int[n];
@@ -22,13 +24,12 @@ public class bubblesortdsa6 {
 			}
 			
 		}
-		for(int i=0;i<a.length;i++){
-		    System.out.print(a[i] + " ");
-		}
+		
+		    System.out.print(a[k-1]);
+		
+
+	}
 
 	}
 
 
-	}
-
-}
