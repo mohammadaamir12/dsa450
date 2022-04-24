@@ -1,6 +1,8 @@
 package dsa450;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class unionoftwoarraydsa13 {
 
@@ -9,6 +11,8 @@ public class unionoftwoarraydsa13 {
 		System.out.println("Enter the size of Array");
 		int n=sc.nextInt();
 		int a[]=new int[n];
+		System.out.println("Enter the size of Array");
+
 		int m=sc.nextInt();
 		int b[]=new int[m];
 		for(int i=0;i<n;i++){
@@ -17,10 +21,14 @@ public class unionoftwoarraydsa13 {
 		for(int i=0;i<m;i++){
 		    b[i]=sc.nextInt();
 		}
-		int c[]=new int[a.length+b.length];
-		for(int i=0;i<c.length;i++ ) {
-		
-		}
+		Set<Integer> set=new HashSet<>();
+	       for(int x:a){
+	           set.add(x);
+	       }
+	       for(int x:b){
+	           set.add(x);
+	       }
+	       System.out.println(set.size());
 	}
 
 }
