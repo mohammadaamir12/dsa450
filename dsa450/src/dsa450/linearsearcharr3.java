@@ -30,7 +30,7 @@ public class linearsearcharr3 {
 		System.out.println("Element found at Position "+s);
 		}
 		else {
-			System.out.println("Element not found at Position ");
+			System.out.println("Element not found");
 		}
 	}
 

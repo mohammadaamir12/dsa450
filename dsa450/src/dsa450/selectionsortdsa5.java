@@ -13,11 +13,9 @@ public class selectionsortdsa5 {
 		    a[i]=sc.nextInt();
 		}
 		for(int i=0;i<a.length-1;i++) {
-			int minIndex=0;
-			int min=Integer.MAX_VALUE;
-			for(int j=i;j<a.length;j++) {
-				if(a[j]<min) {
-					min=a[j];
+			int minIndex=i;
+			for(int j=i+1;j<a.length;j++) {
+				if(a[j]<a[minIndex]) {
 					minIndex=j;
 				}
 				int temp=a[minIndex];

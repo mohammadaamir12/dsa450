@@ -13,7 +13,8 @@ public class cyclicrotateofarraybyonedsa14 {
 		for(int i=0;i<n;i++){
 		    a[i]=sc.nextInt();
 		}
-		int x=a.length;
+		int size=a.length;
+		int x=a[size-1];
 		for(int j=a.length-1;j>0;j--) {
 			a[j]=a[j-1];
 		}
