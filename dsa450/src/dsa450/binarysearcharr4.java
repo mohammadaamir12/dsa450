@@ -14,24 +14,29 @@ public class binarysearcharr4 {
 		}
 		int start=0;
 		int end=a.length-1;
+		int l=0;
 		while(start<=end) {
 			int mid=(start+end)/2;
 			 if(a[mid]==p)
 	            {
-				 int l=mid+1;
+				  l=mid+1;
 		       System.out.println("Found a Element at Position "+l);
+		       break;
 	            }
-	            else{
-	                if(a[mid]<p){
+	            else if(a[mid]<p){
 	                    start =mid+1;
 	                    }
-	                else if(a[mid]>p){
-	                    end=mid-1;
-	                    
-	                }       
+	                else {
+	                    end=mid-1;  
+	                } 
+	               
+		
 		}
-			 start++;
+		if(l==0) {
+			System.out.println("Element is not found");
 		}
+		
 	}
+	
 
-}
+	}

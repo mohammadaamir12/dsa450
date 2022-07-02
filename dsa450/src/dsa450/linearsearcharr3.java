@@ -15,12 +15,23 @@ public class linearsearcharr3 {
 		for(int i=0;i<n;i++){
 		    a[i]=sc.nextInt();
 		
+		
+		
 		if(a[i]==p) {
 			s=i+1;
+			
 		}
+		
+		
+		
 	    
 		}
+		if(s!=0) {
 		System.out.println("Element found at Position "+s);
+		}
+		else {
+			System.out.println("Element not found at Position ");
+		}
 	}
 
 }
