@@ -6,7 +6,7 @@ public class countInversion {
 
 	public static void main(String[] args) {
 		
-         int[]arr= {2,4,1,3,5};
+         int[]arr= {8,4,2,1};
 		int n=arr.length;
 		int temp[]=new int[n];
 		int ans=mergeSort(arr,temp,0,n-1);
