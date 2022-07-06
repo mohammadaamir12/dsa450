@@ -18,7 +18,7 @@ public class positivenegativealternate {
 	    {
 	        int i = 0, j = n - 1;
 	 
-	        // shift all negative values to the end
+	      
 	        while (i < j) {
 	            while (i <= n - 1 && arr[i] > 0)
 	                i += 1;
@@ -28,27 +28,21 @@ public class positivenegativealternate {
 	                swap(arr, i, j);
 	        }
 	 
-	        // i has index of leftmost negative element
+	       
 	        if (i == 0 || i == n)
 	            return;
 	 
-	        // start with first positive
-	        // element at index 0
-	 
-	        // Rearrange array in alternating positive &
-	        // negative items
+	      
 	        int k = 0;
 	        while (k < n && i < n) {
-	            // swap next positive element
-	            // at even position
-	            // from next negative element.
+	          
 	            swap(arr, k, i);
 	            i = i + 1;
 	            k = k + 2;
 	        }
 	    }
 	 
-	    // Utility function to print an array
+	   
 	    static void printArray(int arr[], int n)
 	    {
 	        for (int i = 0; i < n; i++)
