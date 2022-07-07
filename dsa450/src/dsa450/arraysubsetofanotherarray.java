@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class arraysubsetofanotherarray {
 
 	public static void main(String[] args) {
-		   int[]arr= {10,5,2,23,19};
+		   int[]arr= {2,23,19,85,19};
 			int n1=arr.length;
-			int[]ar= {19,5,2};
+			int[]ar= {19,5,2,23,10};
 		    int n2=ar.length;
 		   count(arr,ar,n1,n2);
 	   if(count(arr,ar,n1,n2)==true) {
