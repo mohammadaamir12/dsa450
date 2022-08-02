@@ -10,6 +10,9 @@ public class spiralmatrix {
 	
 		
 		 ArrayList<Integer> spiral = new ArrayList<Integer>();
+		 int r=3;
+		 int c=3;
+		 int matrix[][]= {{1,2,3},{4,5,6}};
 	       int startrow=0;
 	       int startcol=0;
 	       int endrow = r-1;
@@ -46,8 +49,8 @@ public class spiralmatrix {
 	           }
 	           startcol++;
 	       }
-	       return spiral;
-	       
+	       System.out.println(spiral);
+	      
 
 	}
 
