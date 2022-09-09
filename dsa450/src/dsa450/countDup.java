@@ -1,20 +1,27 @@
 package dsa450;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class countDup {
 
 	public static void main(String[] args) {
-		String myString = "coded";
-	      StringBuffer buffer = new StringBuffer(myString);
-	      buffer.reverse();
-	      String data = buffer.toString();
-	      if(myString.equals(data)){
-	         System.out.println("Given String is palindrome");
-	      } else {
-	         System.out.println("Given String is not palindrome");
-	      }
+		String s="mightandmagic";
+		String r="andmagicmigth";
+		char []a=s.toCharArray();
+		char []b=r.toCharArray();
+		Arrays.sort(a);
+		Arrays.sort(b);
+		Boolean result=Arrays.equals(a, b);
+		
+		if(result==true) {
+			System.out.println("Two Strings Are Equal");
+		}
+		else {
+			System.out.println("Two Strings Are not Equal");
+		}
+		
 	}
 
 }

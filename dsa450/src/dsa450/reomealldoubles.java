@@ -1,24 +1,23 @@
 package dsa450;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class reomealldoubles {
 
 	public static void main(String[] args) {
-		int a[]= {1,1,2};
-		HashSet <Integer> set=new HashSet<>();
-		int n=a.length;
-		int count=0;
-		for(int i=0;i<n;i++) {
-			set.add(i);
-			if(set.contains(a[i])) {
-				count++;
-				set.remove(a[i]);
-				
-			}
+		int a[]= {1,1,2,1,1,1};
+		Map <Integer,Integer> set=new HashMap<>();
+		for(int i=0;i<a.length;i++) {
+			 System.out.print(a[i] + " ");
+			
 		}
-		System.out.println(count);
+		
+	
 
 	}
+		
+	}
 
-}
+
