@@ -1,0 +1,64 @@
+import { View, Text,TextInput,Pressable,Keyboard,TouchableOpacity } from 'react-native'
+import React,{useState,useRef, useEffect} from 'react'
+import Colors from '../Colors/Colors';
+
+
+const Otp = ({navigation}) => {
+  const codeDigitArray=new Array(4).fill(0);
+  const textnput=useRef(null)
+  const [code,setCode]=useState('')
+  const [pinRe,setPinRe]=useState(false)
+  const [isFocus,setIsFocus]=useState(false)
+  const handleOnPress=()=>{
+    setIsFocus(true)
+    textnput?.current?.focus();
+  }
+  const handleBlur=()=>{
+    setIsFocus(false)
+  }
+  const isCodeDigitArray=(_value,index)=>{
+    useEffect(()=>{
+      setPinRe(code.length ===4)
+      return ()=>setPinRe(false)
+    },[code])
+    const emptyInputChar=" "
+    const digit=code[index] || emptyInputChar
+    const isCurrentDigit=index ===code.length;
+    const isLastDigit=index === 4-1;
+    const isCodeFull= code.length === 4;
+    const isDigitFocused=isCurrentDigit ||(isLastDigit && isCodeFull);
+    const fan= isFocus && isDigitFocused
+
+    return(
+    fan ? <View style={{borderColor:Colors.themeColor,backgroundColor:'#869bbd',borderWidth:2,width:55,borderRadius:5,padding:12}} key={index}>
+          <Text style={{fontSize:22,fontWeight:'bold',textAlign:'center',color:Colors.themeColor}} >{digit}</Text>
+      </View>:<View style={{borderColor:'#a8aaad',width:55,borderWidth:2,borderRadius:5,padding:12}} key={index}>
+    <Text style={{fontSize:22,fontWeight:'bold',textAlign:'center',color:Colors.themeColor}} >{digit}</Text>
+</View>
+    )
+   
+  }
+  return (
+    <Pressable style={{flex:1,justifyContent:'center',alignItems:'center',}} onPress={Keyboard.dismiss}>
+      <Text style={{fontSize:22,fontWeight:'600',color:'#000'}}>OTP VERIFICATION</Text>
+      <View style={{marginVertical:30,justifyContent:'center',alignItems:'center',alignContent:'center'}}>
+        <Pressable style={{width:'70%',flexDirection:'row',justifyContent:'space-around',}} onPress={handleOnPress}>
+        {codeDigitArray.map(isCodeDigitArray)}
+        </Pressable>
+        <TextInput maxLength={4} style={{position:'absolute',width:1,height:1,opacity:0,}} value={code} 
+        onChangeText={setCode}
+        keyboardType='number-pad'
+        returnKeyType='done'
+        textContentType='oneTimeCode'
+        ref={textnput}
+        onBlur={handleBlur}
+         />
+      </View>
+      <TouchableOpacity style={{padding:15,justifyContent:'center',alignItems:'center',borderRadius:5,marginVertical:5,height:60,width:'80%',backgroundColor:!pinRe?'#a8aaad':Colors.themeColor}} disabled={!pinRe} onPress={()=>navigation.navigate('Home')}>
+        <Text style={{fontSize:25,color:!pinRe?'#cdcbd1':'#fff'}}>Submit</Text>
+      </TouchableOpacity>
+    </Pressable>
+  )
+}
+
+export default Otp
